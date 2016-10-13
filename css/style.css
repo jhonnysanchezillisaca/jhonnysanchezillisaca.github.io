@@ -8,11 +8,12 @@ body {
 }
 
 h1 {
-    font-size: 20px;
+    font-size: 30px;
     font-size: 6vw;
 }
 
 h3 {
+    font-size: 20px;
     font-size: 4vw;
 }
 
@@ -68,6 +69,10 @@ article h4{
     h1 {
         font-size: 1.5em;
     }
+
+    h3 {
+        font-size: 1.2em;
+    }
     h4 {
         font-size: 1em;
     }
@@ -80,6 +85,7 @@ article h4{
     h1 {
         font-size: 4em;
     }
+    h3,
     .title h3 {
         font-size: 3em;
     }
