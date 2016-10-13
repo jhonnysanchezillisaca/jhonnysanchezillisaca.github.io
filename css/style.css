@@ -9,11 +9,11 @@ body {
 
 h1 {
     font-size: 20px;
-    font-size: 4vw;
+    font-size: 6vw;
 }
 
 h3 {
-    font-size: 3vw;
+    font-size: 4vw;
 }
 article {
     margin-left: auto;
@@ -23,6 +23,12 @@ article {
     article h3{
         text-transform: uppercase;
     }
+
+.logo {
+    background-color: #02b3e4;
+    padding: 1em auto;
+}
+
 .title {
     text-align: right;
     text-transform: uppercase;
@@ -31,6 +37,7 @@ article {
     .title h3 {
         font-size: 15px;
         font-size: 2vw;
+        margin-top: 0;
     }
 .h-bar {
     background-color: #7d97ad;
@@ -58,7 +65,7 @@ article {
 }
 @media (min-width: 70em) {
     h1 {
-        font-size: 5em;
+        font-size: 4em;
     }
     h3 {
         font-size: 3em;
