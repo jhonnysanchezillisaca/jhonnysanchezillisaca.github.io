@@ -63,23 +63,20 @@ a:active {
     text-decoration: none;
     color: #2d3c49;
 }
+
 article {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
 }
 
-article h4{
+.title-project{
     text-transform: uppercase;
 }
 
 .content-title {
     color: #7d97ad;
     font-size: 2.66vw;
-}
-.project img {
-    margin-left:auto;
-    margin-right:auto;
 }
 
 @media (max-width: 30em) {
