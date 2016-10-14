@@ -1,5 +1,6 @@
 html {
   font-size: 14px;
+  color: #2d3c49;
   max-width: 80em;
   margin: 0 auto;
 }
@@ -19,6 +20,14 @@ h3 {
 
 h4 {
     font-size: 3vw;
+}
+
+img {
+    max-width: 100%;
+}
+
+p {
+    word-wrap: break-word;
 }
 
 /* Header */
@@ -42,11 +51,18 @@ h4 {
 .horizontal-bar {
     background-color: #7d97ad;
     max-width: 100vw;
-    height: 0.3vw;
+    height: 0.133vw;
     margin: 1em auto;;
 }
 
 /* Content */
+a:link,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+    color: #2d3c49;
+}
 article {
     margin-left: auto;
     margin-right: auto;
@@ -76,15 +92,12 @@ article h4{
     h4 {
         font-size: 1em;
     }
-    /*.title h3 {
-        font-size: 4vw;
-    }*/
-
 }
 @media (min-width: 70em) {
     h1 {
         font-size: 4em;
     }
+
     h3,
     .title h3 {
         font-size: 3em;
