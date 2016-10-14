@@ -42,7 +42,7 @@ p {
     vertical-align:middle;
 }
 
-.title h3 {
+.subtitle {
     font-size: 15px;
     font-size: 4vw;
     margin-top: 0;
@@ -75,6 +75,7 @@ article h4{
 
 .content-title {
     color: #7d97ad;
+    font-size: 2.66vw;
 }
 .project img {
     margin-left:auto;
@@ -86,12 +87,12 @@ article h4{
         font-size: 1.5em;
     }
 
-    h3 {
+    h3,
+    .title-project,
+    .content-title {
         font-size: 1.2em;
     }
-    h4 {
-        font-size: 1em;
-    }
+
 }
 @media (min-width: 70em) {
     h1 {
@@ -99,11 +100,12 @@ article h4{
     }
 
     h3,
-    .title h3 {
+    .subtitle {
         font-size: 3em;
     }
 
-    h4 {
+    .title-project,
+    .content-title {
         font-size: 2em;
     }
 }
