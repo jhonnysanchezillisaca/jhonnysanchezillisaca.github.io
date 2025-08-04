@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jhonny Sánchez - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.5;
+            color: #333;
+            background-color: #e8e8e8;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px 60px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+        }
+
+        .header-left h1 {
+            font-size: 2.8em;
+            font-weight: 300;
+            margin-bottom: 8px;
+            color: #000;
+        }
+
+        .header-left .title {
+            font-size: 1.1em;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 400;
+        }
+
+        .header-left .location {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+        }
+
+        .header-left .links {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .header-left .links a {
+            color: #007acc;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        .header-left .links a:hover {
+            text-decoration: underline;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .mission {
+            color: #333;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section h2 {
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #007acc;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 8px;
+        }
+
+        .job {
+            margin-bottom: 25px;
+        }
+
+        .job-header {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: start;
+            margin-bottom: 12px;
+        }
+
+        .job-left {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .job-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 2px;
+        }
+
+        .company {
+            font-weight: 400;
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .duration {
+            color: #666;
+            font-size: 0.9em;
+            text-align: right;
+        }
+
+        .job ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 8px;
+        }
+
+        .job li {
+            margin-bottom: 6px;
+            padding-left: 15px;
+            position: relative;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+
+        .job li:before {
+            content: "•";
+            color: #666;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .education-section {
+            margin-bottom: 35px;
+        }
+
+        .education-item {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: start;
+            margin-bottom: 15px;
+        }
+
+        .education-left .education-title {
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 2px;
+            font-size: 1em;
+        }
+
+        .education-left .education-institution {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .education-duration {
+            color: #666;
+            font-size: 0.9em;
+            text-align: right;
+        }
+
+        .skills-section {
+            margin-bottom: 20px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 15px;
+            font-size: 0.9em;
+        }
+
+        .skill {
+            color: #333;
+        }
+
+        .skill:not(:last-child):after {
+            content: "|";
+            margin-left: 15px;
+            color: #ccc;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 25px;
+            }
+
+            .header {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .job-header {
+                grid-template-columns: 1fr;
+            }
+
+            .education-item {
+                grid-template-columns: 1fr;
+            }
+
+            .duration, .education-duration {
+                text-align: left;
+                margin-top: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-left">
+                <h1>Jhonny Sánchez</h1>
+                <div class="title">Senior Software Engineer</div>
+                <div class="location">Barcelona, Catalonia</div>
+                <div class="links">
+                    <a href="https://linkedin.com/in/jhonnysanchezillisaca" target="_blank">linkedin.com/in/jhonnysanchezillisaca</a>
+                    <a href="https://github.com/jhonnysanchezillisaca" target="_blank">github.com/jhonnysanchezillisaca</a>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="mission">
+                    Mission-driven full-stack software engineer. Interested in web technologies and developer experience. Trying to make a positive impact on society through my work.
+                </div>
+            </div>
+        </header>
+
+        <section class="section">
+            <h2>Work Experience</h2>
+            
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-left">
+                        <div class="job-title">Senior Software Engineer</div>
+                        <div class="company">FirstVet</div>
+                    </div>
+                    <div class="duration">Feb 2023 - Current</div>
+                </div>
+                <ul>
+                    <li>Architect and lead critical infrastructure initiatives including AWS ECS migration, IaC implementation with Pulumi, and major technology transitions (Nuxt 2 to 3), serving as the primary technical decision-maker.</li>
+                    <li>Act as the technical go-to across all system components—from frontend (Nuxt/Vue) to backend (Node.js/Express) to infrastructure (AWS/MySQL/BigCommerce)—providing architectural guidance and resolving complex technical challenges.</li>
+                    <li>Drive engineering excellence through RFC authorship, technical refinements, and establishing delivery standards including feature flags, temporal environments, and comprehensive testing practices.</li>
+                    <li>Mentor team members and lead cross-functional collaboration, consistently providing technical feedback and ensuring architectural coherence across multiple product initiatives.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-left">
+                        <div class="job-title">Senior Software Engineer</div>
+                        <div class="company">Koa Health</div>
+                    </div>
+                    <div class="duration">2021 - Jan 2023</div>
+                </div>
+                <ul>
+                    <li>Participated and lead refinements and implementation of new features with the product engineering team, collaborating closely with Design, QA, DevOps, CyberSec, Data, R&D and other products' engineering teams.</li>
+                    <li>Maintained, documented and developed new features on APIs using ExpressJS/TSOA/NestJS (around 60% of the time), on web apps using Angular (around 20%), and on mobile apps using Flutter (around 20%)</li>
+                    <li>Collaborated on multiple engineering teams, doing TDD, pair programming and giving feedback on PRs.</li>
+                    <li>Continuously worked with DevOps team to maintain our infrastructure and assess the impact of changes on our products.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-left">
+                        <div class="job-title">Senior Software Engineer</div>
+                        <div class="company">Dianima (part time)</div>
+                    </div>
+                    <div class="duration">2020 - 2021</div>
+                </div>
+                <ul>
+                    <li>As the first engineer, architected and developed the frontend as an SPA using React with Typescript and TailwindCSS, and on the backend a REST API with ASP.NET Core, EF Core as the ORM and Azure SQL as DB</li>
+                    <li>Designed the cloud solution for all the services on Azure, using AppService for the API, Blob Storage + CDN for the front and Azure SQL for the DB</li>
+                    <li>Setup CI/CD pipelines on Azure DevOps</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-left">
+                        <div class="job-title">Software Engineer</div>
+                        <div class="company">Valudio</div>
+                    </div>
+                    <div class="duration">2018 - 2021</div>
+                </div>
+                <ul>
+                    <li>Developed and maintained multiple REST APIs, integration, and synchronization services using technologies like ASP.Net Core, EF Core, SQL Server and MariaDB.</li>
+                    <li>Implemented and maintained functionalities and bug fixes in web applications using React.</li>
+                    <li>Setup multiple environments and CI/CD pipelines using Docker, Azure and Azure DevOps.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-left">
+                        <div class="job-title">Software Engineer</div>
+                        <div class="company">ForceManager</div>
+                    </div>
+                    <div class="duration">2017 - 2018</div>
+                </div>
+                <ul>
+                    <li>Developed different mobile app forms with complex workflows and validations using Angular2+ and Ionic 3.</li>
+                    <li>Created APIs with ASP.NET Web API 2 and SQL Server to use in third-party integrations.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Education</h2>
+            
+            <div class="education-item">
+                <div class="education-left">
+                    <div class="education-title">Bachelor of Software Engineering</div>
+                    <div class="education-institution">Universidad De Oviedo</div>
+                </div>
+                <div class="education-duration">2011 - 2016</div>
+            </div>
+
+            <div class="education-item">
+                <div class="education-left">
+                    <div class="education-title">Full Stack Web Developer</div>
+                    <div class="education-institution">Udacity</div>
+                </div>
+                <div class="education-duration">2016 - 2017</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Skills</h2>
+            <div class="skills">
+                <span class="skill">Typescript</span>
+                <span class="skill">Node.js</span>
+                <span class="skill">Nuxt.js</span>
+                <span class="skill">SQL</span>
+                <span class="skill">Continuous Delivery</span>
+                <span class="skill">React</span>
+                <span class="skill">TDD</span>
+                <span class="skill">DDD</span>
+                <span class="skill">AWS</span>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
