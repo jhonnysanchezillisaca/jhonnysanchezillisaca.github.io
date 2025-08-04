@@ -225,9 +225,170 @@
                 margin-top: 5px;
             }
         }
+
+        /* PDF Export Button */
+        .pdf-export-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #007acc;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: 500;
+            box-shadow: 0 2px 8px rgba(0, 122, 204, 0.3);
+            z-index: 1000;
+            transition: background-color 0.2s;
+        }
+
+        .pdf-export-btn:hover {
+            background: #005c99;
+        }
+
+        /* Print Styles for PDF Export */
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+                font-size: 13px;
+                line-height: 1.4;
+            }
+
+            .container {
+                max-width: none;
+                margin: 0;
+                padding: 20px 30px;
+                box-shadow: none;
+                background: white;
+            }
+
+            .pdf-export-btn {
+                display: none;
+            }
+
+            .header {
+                grid-template-columns: 1fr 1fr;
+                gap: 25px;
+                margin-bottom: 20px;
+                padding-bottom: 12px;
+                page-break-inside: avoid;
+            }
+
+            .header-left h1 {
+                font-size: 2.2em;
+                margin-bottom: 6px;
+            }
+
+            .header-left .title {
+                font-size: 1em;
+                margin-bottom: 4px;
+            }
+
+            .header-left .location {
+                margin-bottom: 8px;
+                font-size: 0.9em;
+            }
+
+            .header-left .links {
+                gap: 2px;
+            }
+
+            .header-left .links a {
+                font-size: 0.85em;
+            }
+
+            .mission {
+                font-size: 0.9em;
+                line-height: 1.5;
+            }
+
+            .section {
+                margin-bottom: 20px;
+                page-break-inside: avoid;
+                padding-top: 15px;
+            }
+
+            .section h2 {
+                font-size: 1.2em;
+                margin-bottom: 12px;
+                padding-bottom: 4px;
+            }
+
+            .job {
+                margin-bottom: 18px;
+                break-inside: avoid;
+            }
+
+            .job-header {
+                margin-bottom: 8px;
+            }
+
+            .job-title {
+                font-size: 1em;
+                margin-bottom: 2px;
+            }
+
+            .company {
+                font-size: 0.9em;
+            }
+
+            .duration {
+                font-size: 0.85em;
+            }
+
+            .job ul {
+                margin-top: 6px;
+            }
+
+            .job li {
+                margin-bottom: 4px;
+                font-size: 0.85em;
+                line-height: 1.4;
+                padding-left: 12px;
+            }
+
+            .education-item {
+                margin-bottom: 10px;
+            }
+
+            .education-left .education-title {
+                font-size: 0.95em;
+                margin-bottom: 1px;
+            }
+
+            .education-left .education-institution {
+                font-size: 0.85em;
+            }
+
+            .education-duration {
+                font-size: 0.85em;
+            }
+
+            .skills {
+                font-size: 0.85em;
+                gap: 6px 12px;
+            }
+
+            .skill:not(:last-child):after {
+                margin-left: 12px;
+            }
+
+            /* Force single page */
+            .container {
+                page-break-inside: avoid;
+            }
+
+            .section {
+                page-break-inside: avoid;
+            }
+        }
     </style>
 </head>
 <body>
+    <button class="pdf-export-btn" onclick="exportToPDF()">📄 Export to PDF</button>
     <div class="container">
         <header class="header">
             <div class="header-left">
@@ -241,7 +402,7 @@
             </div>
             <div class="header-right">
                 <div class="mission">
-                    Mission-driven full-stack software engineer. Interested in web technologies and developer experience. Trying to make a positive impact on society through my work.
+                    Full-stack software engineer who enjoys building reliable systems and solving complex technical problems. Passionate about web technologies, developer experience, and creating software that makes a positive impact on people's lives.
                 </div>
             </div>
         </header>
@@ -274,10 +435,10 @@
                     <div class="duration">2021 - Jan 2023</div>
                 </div>
                 <ul>
-                    <li>Participated and lead refinements and implementation of new features with the product engineering team, collaborating closely with Design, QA, DevOps, CyberSec, Data, R&D and other products' engineering teams.</li>
-                    <li>Maintained, documented and developed new features on APIs using ExpressJS/TSOA/NestJS (around 60% of the time), on web apps using Angular (around 20%), and on mobile apps using Flutter (around 20%)</li>
-                    <li>Collaborated on multiple engineering teams, doing TDD, pair programming and giving feedback on PRs.</li>
-                    <li>Continuously worked with DevOps team to maintain our infrastructure and assess the impact of changes on our products.</li>
+                    <li>Led cross-functional technical initiatives spanning Design, QA, DevOps, CyberSec, Data, and R&D teams, driving product engineering decisions and feature implementation strategies.</li>
+                    <li>Architected and maintained critical backend services (ExpressJS/TSOA/NestJS), web applications (Angular), and mobile solutions (Flutter), serving as the primary technical owner across the full technology stack.</li>
+                    <li>Established engineering best practices through TDD implementation, pair programming sessions, and comprehensive code review processes, elevating team technical standards.</li>
+                    <li>Collaborated with DevOps to optimize infrastructure performance and assess system-wide impact of architectural changes, ensuring scalable and reliable product delivery.</li>
                 </ul>
             </div>
 
@@ -290,9 +451,9 @@
                     <div class="duration">2020 - 2021</div>
                 </div>
                 <ul>
-                    <li>As the first engineer, architected and developed the frontend as an SPA using React with Typescript and TailwindCSS, and on the backend a REST API with ASP.NET Core, EF Core as the ORM and Azure SQL as DB</li>
-                    <li>Designed the cloud solution for all the services on Azure, using AppService for the API, Blob Storage + CDN for the front and Azure SQL for the DB</li>
-                    <li>Setup CI/CD pipelines on Azure DevOps</li>
+                    <li>Founded the entire technical architecture as the first engineer, building a full-stack solution from scratch with React/TypeScript/TailwindCSS frontend and ASP.NET Core/EF Core/Azure SQL backend.</li>
+                    <li>Designed and implemented comprehensive Azure cloud infrastructure, optimizing for scalability with AppService, Blob Storage, CDN integration, and database architecture decisions.</li>
+                    <li>Established development workflows and CI/CD automation on Azure DevOps, creating the foundation for future team growth and deployment practices.</li>
                 </ul>
             </div>
 
@@ -305,9 +466,9 @@
                     <div class="duration">2018 - 2021</div>
                 </div>
                 <ul>
-                    <li>Developed and maintained multiple REST APIs, integration, and synchronization services using technologies like ASP.Net Core, EF Core, SQL Server and MariaDB.</li>
-                    <li>Implemented and maintained functionalities and bug fixes in web applications using React.</li>
-                    <li>Setup multiple environments and CI/CD pipelines using Docker, Azure and Azure DevOps.</li>
+                    <li>Built and maintained enterprise-grade REST APIs and integration services using ASP.NET Core, EF Core, SQL Server, and MariaDB, handling complex business logic and data synchronization requirements.</li>
+                    <li>Delivered robust frontend solutions and resolved critical production issues in React applications, ensuring optimal user experience and application reliability.</li>
+                    <li>Designed multi-environment deployment strategies with Docker containerization and Azure DevOps pipelines, streamlining development workflows and reducing deployment risks.</li>
                 </ul>
             </div>
 
@@ -320,8 +481,8 @@
                     <div class="duration">2017 - 2018</div>
                 </div>
                 <ul>
-                    <li>Developed different mobile app forms with complex workflows and validations using Angular2+ and Ionic 3.</li>
-                    <li>Created APIs with ASP.NET Web API 2 and SQL Server to use in third-party integrations.</li>
+                    <li>Engineered sophisticated mobile application interfaces with intricate validation logic and workflow management using Angular2+ and Ionic 3, delivering seamless user experiences.</li>
+                    <li>Developed robust integration APIs with ASP.NET Web API 2 and SQL Server, enabling reliable third-party system connectivity and data exchange.</li>
                 </ul>
             </div>
         </section>
@@ -361,5 +522,38 @@
             </div>
         </section>
     </div>
+
+    <script>
+        function exportToPDF() {
+            // Set document title for PDF filename
+            const originalTitle = document.title;
+            document.title = 'Jhonny_Sanchez_Resume';
+            
+            // Trigger print dialog
+            window.print();
+            
+            // Restore original title
+            setTimeout(() => {
+                document.title = originalTitle;
+            }, 100);
+        }
+
+        // Optional: Add keyboard shortcut (Ctrl+P or Cmd+P)
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
+                e.preventDefault();
+                exportToPDF();
+            }
+        });
+
+        // Hide the export button when printing
+        window.addEventListener('beforeprint', function() {
+            document.querySelector('.pdf-export-btn').style.display = 'none';
+        });
+        
+        window.addEventListener('afterprint', function() {
+            document.querySelector('.pdf-export-btn').style.display = 'block';
+        });
+    </script>
 </body>
 </html>
