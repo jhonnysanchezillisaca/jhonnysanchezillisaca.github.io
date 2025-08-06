@@ -1,0 +1,37 @@
+name: Generate PDF Resume
+
+on:
+  push:
+    branches: [ main ]
+    paths: [ 'index.html' ]
+  workflow_dispatch: # Allow manual triggering
+
+jobs:
+  generate-pdf:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Generate PDF
+      run: npm run generate-pdf
+      
+    - name: Commit and push PDF
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add Jhonny_Sanchez_Resume.pdf
+        git diff --staged --quiet || git commit -m "🤖 Auto-generate PDF resume"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
